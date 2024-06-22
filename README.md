@@ -8,7 +8,7 @@
 3. 🔑 Update the .streamlit/secrets.toml file with your database credentials.
 4. 🏃‍♀️ Run the Streamlit application by typing `streamlit run app.py` in your terminal.
 
-## 🛠️ Optional: Use the helper function to run queries on your database
+## 🛠️ Optional: Use the helper functions to run queries on your database
 The application includes helper functions to run queries on your database and return the results as a pandas DataFrame. 
 
 Please note that the functions assume you have your database credentials stored in your secrets.toml file. If you do not have this file set up, you can: 
