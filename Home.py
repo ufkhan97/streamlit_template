@@ -15,6 +15,6 @@ st.set_page_config(
     }
 )
 
-st.image('assets/657c7ed16b14af693c08b92d_GTC-Logotype-Dark.png', width = 300)
+st.image('assets/GITCOIN-Logotype-Dark.png', width = 300)
 st.header("🎉 Congrats! You deployed the template! Now let's fill it in like a mad lib!")
 
