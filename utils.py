@@ -1,24 +1,20 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import requests
-import re
 from datetime import datetime, timezone
 import psycopg2 as pg
 
-
-ttl_short = 900 # 15 minutes
-ttl_long = 36000 # 10 hours
-
+## Helper functions to run queries
+## These assume you have database credentials stored in your secrets.toml file
 
 def run_query(query):
     """Run query and return results"""
     try:
-        conn = pg.connect(host=st.secrets["indexer"]["host"], 
-                           port=st.secrets["indexer"]["port"], 
-                           dbname=st.secrets["indexer"]["dbname"], 
-                           user=st.secrets["indexer"]["user"], 
-                           password=st.secrets["indexer"]["password"])
+        conn = pg.connect(host=st.secrets["database"]["host"], 
+                           port=st.secrets["database"]["port"], 
+                           dbname=st.secrets["database"]["dbname"], 
+                           user=st.secrets["database"]["user"], 
+                           password=st.secrets["database"]["password"])
         cur = conn.cursor()
         cur.execute(query)
         col_names = [desc[0] for desc in cur.description]
